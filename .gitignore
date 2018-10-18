@@ -57,3 +57,12 @@ target/apidocs/Clustering/class-use/TestClustering.html
 target/apidocs/Clustering/class-use/VariationOfInformation.html
 target/javadoc-bundle-options/javadoc-options-javadoc-resources.xml
 target/javadoc-bundle-options/package-list
+.idea/codeStyles/codeStyleConfig.xml
+.idea/codeStyles/Project.xml
+.idea/libraries/Maven__NlpToolkit_DataStructure_1_0_0.xml
+target/classes/Clustering/Cluster.class
+target/classes/Clustering/DataClustering.class
+target/classes/Clustering/RandIndex.class
+target/classes/Clustering/SimilarityMeasure.class
+target/classes/Clustering/TestClustering.class
+target/classes/Clustering/VariationOfInformation.class

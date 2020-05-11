@@ -66,3 +66,9 @@ target/classes/Clustering/RandIndex.class
 target/classes/Clustering/SimilarityMeasure.class
 target/classes/Clustering/TestClustering.class
 target/classes/Clustering/VariationOfInformation.class
+.idea/libraries/Maven__io_github_starlangsoftware_DataStructure_1_0_2.xml
+target/Clustering-1.0.0-javadoc.jar.asc
+target/Clustering-1.0.0-sources.jar.asc
+target/Clustering-1.0.0.jar.asc
+target/Clustering-1.0.0.pom
+target/Clustering-1.0.0.pom.asc

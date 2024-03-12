@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class DataClustering<T> {
-    private ArrayList<Cluster<T>> clusters;
+    private final ArrayList<Cluster<T>> clusters;
 
     public DataClustering(){
         clusters = new ArrayList<>();
@@ -25,9 +25,9 @@ public class DataClustering<T> {
 
     public HashSet<T> elements(){
         HashSet<T> elements = new HashSet<>();
-        for (int i = 0; i < clusters.size(); i++){
-            for (int j = 0; j < clusters.get(i).size(); j++){
-                elements.add(clusters.get(i).getItem(j));
+        for (Cluster<T> cluster : clusters) {
+            for (int j = 0; j < cluster.size(); j++) {
+                elements.add(cluster.getItem(j));
             }
         }
         return elements;
@@ -35,18 +35,17 @@ public class DataClustering<T> {
 
     public int numberOfElements(){
         int count = 0;
-        for (int i = 0; i < clusters.size(); i++){
-            count += clusters.get(i).size();
+        for (Cluster<T> cluster : clusters) {
+            count += cluster.size();
         }
         return count;
     }
 
     public HashMap<T, Cluster<T>> clusterMap(){
         HashMap<T, Cluster<T>> clusterMap = new HashMap<>();
-        for (int i = 0; i < clusters.size(); i++){
-            Cluster<T> cluster = clusters.get(i);
-            for (int j = 0; j < clusters.get(i).size(); j++){
-                T item = clusters.get(i).getItem(j);
+        for (Cluster<T> cluster : clusters) {
+            for (int j = 0; j < cluster.size(); j++) {
+                T item = cluster.getItem(j);
                 clusterMap.put(item, cluster);
             }
         }
@@ -62,17 +61,16 @@ public class DataClustering<T> {
     public void pruneToIntersection(DataClustering<T> secondClustering){
         HashSet<T> secondElements = secondClustering.elements();
         ArrayList<Cluster<T>> clustersToBeRemoved = new ArrayList<>();
-        for (int i = 0; i < clusters.size(); i++){
-            Cluster<T> cluster = clusters.get(i);
+        for (Cluster<T> cluster : clusters) {
             ArrayList<T> toBeRemoved = new ArrayList<>();
-            for (int j = 0; j < clusters.get(i).size(); j++){
-                T item = clusters.get(i).getItem(j);
-                if (!secondElements.contains(item)){
+            for (int j = 0; j < cluster.size(); j++) {
+                T item = cluster.getItem(j);
+                if (!secondElements.contains(item)) {
                     toBeRemoved.add(item);
                 }
             }
             cluster.removeAll(toBeRemoved);
-            if (cluster.size() == 0){
+            if (cluster.size() == 0) {
                 clustersToBeRemoved.add(cluster);
             }
         }

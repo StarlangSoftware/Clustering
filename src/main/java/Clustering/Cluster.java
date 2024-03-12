@@ -3,7 +3,7 @@ package Clustering;
 import java.util.ArrayList;
 
 public class Cluster<T> {
-    private ArrayList<T> elements;
+    private final ArrayList<T> elements;
 
     public Cluster(){
         elements = new ArrayList<>();

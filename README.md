@@ -73,14 +73,7 @@ Use below line to generate jar file:
 
      mvn install
 
-
-
-------------------------------------------------
-
-Clustering
-============
 + [Maven Usage](#maven-usage)
-
 
 ### Maven Usage
 

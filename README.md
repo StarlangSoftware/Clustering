@@ -73,9 +73,7 @@ Use below line to generate jar file:
 
      mvn install
 
-+ [Maven Usage](#maven-usage)
-
-### Maven Usage
+## Maven Usage
 
 	<dependency>
   	<groupId>NlpToolkit</groupId>
